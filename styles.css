@@ -1,5 +1,4 @@
 body {
-  font-size: 28px;
   margin:0px;
 }
 
@@ -49,13 +48,14 @@ h5 {
 }
 
 h6{
-  font-size: 18px;
+  font-size: 16px;
   font-family: Source Sans Pro;
   font-weight: normal;
   text-transform: none;
   color: #333;
   letter-spacing: 0px;
   font-style: italic;
+  margin: 20px 0px 20px 0px;
 }
 
 .container{
@@ -94,6 +94,7 @@ h6{
   display: inline-block;
   border-radius:30px;
   letter-spacing: 5px;
+  margin: 30px 0px 30px 0px;
 }
 
 .button-inverse-secondary {
@@ -123,9 +124,42 @@ h6{
   position: relative;
 }
 
-.header2 {
+.header-product {
   height: 100%;
   background-image: url("assets/product-image@2x.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  /*overflow: hidden;*/
+  display: block;
+  position: relative;
+}
+
+.header-about{
+  height: 100%;
+  background-image: url("assets/about-image-white@2x.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  /*overflow: hidden;*/
+  display: block;
+  position: relative;
+}
+
+.header-delivery{
+  height: 100%;
+  background-image: url("assets/delivery-image@2x.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  /*overflow: hidden;*/
+  display: block;
+  position: relative;
+}
+
+.header-contact{
+  height: 100%;
+  background-image: url("assets/contact-image@2x.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -181,6 +215,20 @@ h6{
   text-decoration: none;
   color: #000;
   letter-spacing: 3px;
+  padding-bottom: 5px;
+}
+
+.navi-item-selected{
+  margin-left: 40px;
+  text-align: right;
+  font-size: 14px;
+  font-family: Source Sans Pro;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  letter-spacing: 3px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #000;
 }
 
 .navi-item img {
@@ -208,7 +256,7 @@ h6{
 .column {
   position: relative;
   width: 33.333%;
-  padding: 4%;
+  padding: 3%;
   text-align: center;
 }
 
