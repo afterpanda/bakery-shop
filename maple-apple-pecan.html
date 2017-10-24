@@ -3,6 +3,8 @@
     <meta charset="utf-8">
     <title>Bun Bun Bakery Shop</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="javascript.js"></script>
   </head>
   <body>
 
@@ -21,10 +23,40 @@
           <div class="header-half">
             <h4>maple apple pecan</h4>
             <h5>$4.99</h5>
-            <p>Spicy single-origin Sumatran cinnamon is swirled around our flaky, buttery pastry to wake you up with a wow. </p>
-            <h6><strong>Ingredients:</strong></h6>
-            <h6>enriched wheat flour (wheat flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), water, butter (pasteurized cream), sugar, brown sugar, nonfat milk, eggs, yeast, salt, mono- & diglycerides, cinnamon, canola oil, corn starch. contains: wheat, egg, and milk. manufactured on shared equipment processing tree nuts and soy </h6>
-            <a href="#"><button class="button-primary" type="button" name="button">add to cart</button></a>
+            <p>Spicy single-origin Sumatran cinnamon is swirled around our flaky, buttery pastry to wake you up with a wow.</p>
+            <p><br>Pack Types:</p>
+            <div class="type-list">
+              <a class="type-item type-item-active" id="type-1" href="#" type="single">Single Roll</a>
+              <a class="type-item" id="type-6" href="#" type="6packs">6 Packs</a>
+              <a class="type-item" id="type-12" href="#" type="12packs">12 Packs</a>
+            </div>
+
+            <p><br>Added Flavors:</p>
+            <div class="flavor-list">
+              <a class="flavor-item flavor-item-disabled" id="flavor-1" href="#" flavor="maple">Maple Apple Pecan</a>
+              <a class="flavor-item flavor-item-disabled" id="flavor-2" href="#" flavor="walnut">Walnut</a>
+              <a class="flavor-item flavor-item-disabled" id="flavor-3" href="#" flavor="original">Original</a>
+            </div>
+
+            <div class="dropdown">
+              <button type="button" name="button" class="dropbnt"><div id="dropbnt-num">1</div></button>
+
+              <ul class="dropdown-content">
+                <li class="dropdown-number" value="1"><a href="#">1</a></li>
+                <li class="dropdown-number" value="2"><a href="#">2</a></li>
+                <li class="dropdown-number" value="3"><a href="#">3</a></li>
+                <li class="dropdown-number" value="4"><a href="#">4</a></li>
+                <li class="dropdown-number" value="5"><a href="#">5</a></li>
+                <li class="dropdown-number" value="6"><a href="#">6</a></li>
+                <li class="dropdown-number" value="7"><a href="#">7</a></li>
+                <li class="dropdown-number" value="8"><a href="#">8</a></li>
+                <li class="dropdown-number" value="9"><a href="#">9</a></li>
+                <li class="dropdown-number" value="10"><a href="#">10</a></li>
+              </ul>
+
+              <a href="#"><button class="button-primary" id="add-to-cart" type="button" name="button">add to cart</button></a>
+            </div>
+
           </div>
         </div>
       </div>
