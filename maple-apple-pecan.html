@@ -4,7 +4,7 @@
     <title>Bun Bun Bakery Shop</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="javascript.js"></script>
+    <script src="main.js"></script>
   </head>
   <body>
 
@@ -17,29 +17,47 @@
               <a class="navi-item" href="about.html">ABOUT</a>
               <a class="navi-item" href="delivery.html">DELIVERY</a>
               <a class="navi-item" href="contact.html">CONTACT</a>
-              <a class="navi-item" href=""><img src="assets/shopping-cart.svg" alt="shopping cart"></a>
+              <a class="navi-item" href="shopping-cart.html" id="shopping-cart"><img src="assets/shopping-cart.svg" alt="shopping cart"></a>
             </div>
+          </div>
+
+          <div class="header-content">
+
+          <div class="header-left-half">
+            <img id="image-detail-page" src="assets/product6@2x.png" alt="img">
           </div>
           <div class="header-half">
             <h4>maple apple pecan</h4>
-            <h5>$4.99</h5>
+            <h5 id="price-detail-page">$4.99</h5>
             <p>Spicy single-origin Sumatran cinnamon is swirled around our flaky, buttery pastry to wake you up with a wow.</p>
-            <p><br>Pack Types:</p>
+            <p><br>Choose Pack Types:</p>
             <div class="type-list">
-              <a class="type-item type-item-active" id="type-1" href="#" type="single">Single Roll</a>
-              <a class="type-item" id="type-6" href="#" type="6packs">6 Packs</a>
-              <a class="type-item" id="type-12" href="#" type="12packs">12 Packs</a>
+              <a class="type-item type-item-active" id="type-1" href="#" type="Single Roll">Single Roll</a>
+              <a class="type-item" id="type-6" href="#" type="6 Packs">6 Packs</a>
+              <a class="type-item" id="type-12" href="#" type="12 Packs">12 Packs</a>
             </div>
 
-            <p><br>Added Flavors:</p>
+            <p>Add up to 3 Flavors:</p>
             <div class="flavor-list">
-              <a class="flavor-item flavor-item-disabled" id="flavor-1" href="#" flavor="maple">Maple Apple Pecan</a>
-              <a class="flavor-item flavor-item-disabled" id="flavor-2" href="#" flavor="walnut">Walnut</a>
-              <a class="flavor-item flavor-item-disabled" id="flavor-3" href="#" flavor="original">Original</a>
+              <a class="flavor-item-disabled" id="flavor-1" href="#" flavor="Maple Apple Pecan">Maple Apple Pecan</a>
+              <a class="flavor-item-disabled" id="flavor-2" href="#" flavor="Bacon">Bacon</a>
+              <a class="flavor-item-disabled" id="flavor-3" href="#" flavor="Walnut">Walnut</a>
+              <a class="flavor-item-disabled" id="flavor-4" href="#" flavor="Original (Gluten-free)">Original (Gluten-free)</a>
+              <a class="flavor-item-disabled" id="flavor-5" href="#" flavor="Original (Vegan)">Original (Vegan)</a>
+              <a class="flavor-item-disabled" id="flavor-6" href="#" flavor="Original">Original</a>
+              <a class="flavor-item-disabled" id="flavor-7" href="#" flavor="Pumpkin Spice">Pumpkin Spice</a>
+              <a class="flavor-item-disabled" id="flavor-8" href="#" flavor="Caramel Pecan">Caramel Pecan</a>
+              <a class="flavor-item-disabled" id="flavor-9" href="#" flavor="Carrot Cake">Carrot Cake</a>
+              <a class="flavor-item-disabled" id="flavor-10" href="#" flavor="Old Fashioned Buttermilk">Old Fashioned Buttermilk</a>
+              <a class="flavor-item-disabled" id="flavor-11" href="#" flavor="Strawberry Rhubarb">Strawberry Rhubarb</a>
+              <a class="flavor-item-disabled" id="flavor-12" href="#" flavor="Birthday Cake">Birthday Cake</a>
+              <a class="flavor-item-disabled" id="flavor-13" href="#" flavor="Lemon Lavender">Lemon Lavender</a>
+              <a class="flavor-item-disabled" id="flavor-14" href="#" flavor="Cranberry">Cranberry</a>
+              <a class="flavor-item-disabled" id="flavor-15" href="#" flavor="Blackberry">Blackberry</a>
             </div>
 
             <div class="dropdown">
-              <button type="button" name="button" class="dropbnt"><div id="dropbnt-num">1</div></button>
+              <button type="button" name="button" class="dropbnt"><div id="dropbnt-num">1</div><img id="dropdown-arrow" src="assets/expand-button.svg" alt="" width="12px"></button>
 
               <ul class="dropdown-content">
                 <li class="dropdown-number" value="1"><a href="#">1</a></li>
@@ -57,6 +75,7 @@
               <a href="#"><button class="button-primary" id="add-to-cart" type="button" name="button">add to cart</button></a>
             </div>
 
+          </div>
           </div>
         </div>
       </div>

@@ -3,6 +3,8 @@
     <meta charset="utf-8">
     <title>Bon Bon Bakery Shop</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="main.js"></script>
   </head>
   <body>
     <div class="header-shopping">
@@ -14,15 +16,78 @@
               <a class="navi-item" href="about.html">ABOUT</a>
               <a class="navi-item" href="delivery.html">DELIVERY</a>
               <a class="navi-item" href="contact.html">CONTACT</a>
-              <a class="navi-item" href=""><img src="assets/shopping-cart.svg" alt="shopping cart"></a>
+              <a class="navi-item" href="shopping-cart.html"><img src="assets/shopping-cart.svg" alt="shopping cart"></a>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="column-2">
+            <h5>Shopping Cart</h5>
+
+            <!-- BUG:
+
+            <div class="cart-item">
+              <div class="item-image">
+                <img src="assets/product12@2x.png" alt="item-image">
+              </div>
+              <div class="item-detail">
+                <div class="item-detail-left">
+                  <h6>Product Name</h6>
+                  <p>Pack Type:</p>
+                  <p>flavor:</p>
+                  <p>number</p>
+                  <h6>$$$</h6>
+
+                  <h5>REMOVE</h5>
+                </div>
+                <div class="item-detail-right">
+                  <h6>Total: $$$</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <div class="item-image">
+                <img src="assets/product12@2x.png" alt="item-image">
+              </div>
+              <div class="item-detail">
+                <div class="item-detail-left">
+                  <h6>Product Name</h6>
+                  <p>Pack Type:</p>
+                  <p>flavor:</p>
+                  <h6>$$$</h6>
+                  <h5>REMOVE</h5>
+                </div>
+                <div class="item-detail-right">
+                  <h6>Total: $$$</h6>
+                </div>
+              </div>
+            </div>
+
+             -->
+
+          </div>
+          <div class="column-1">
+            <h5>ORDER SUMMARY</h5>
+            <p>Order Value: <strong id="order-value">$$$</strong></p>
+            <p>Delivery: <strong>$5</strong></p>
+            <h6>Total Amount: <strong id="total-value">$$$</strong></h6>
+            <a href="#"><button class="button-primary" type="button" name="button">check out</button></a>
+          </div>
+
+        </div>
+
+
+      </div>
+
     <div class="footer">
       <div class="container">
         <img src="assets/logo-white.svg" alt="logo">
       </div>
     </div>
+
   </body>
 </html>
