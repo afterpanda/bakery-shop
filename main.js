@@ -9,9 +9,12 @@ $(document).ready(function(){
     'value':1,
   };
 
+
   loadCart();
   listCart();
   displayCart();
+
+  console.log(cart.length);
 
   function saveCart(){
     localStorage.setItem("shoppingCart",JSON.stringify(cart));
@@ -212,6 +215,7 @@ $(document).ready(function(){
     saveCart();
     console.log(cart.length);
     location.reload();
+    itemCount++;
   });
 
   $(".dropbnt").click(function(){
@@ -404,13 +408,39 @@ $(document).ready(function(){
     $('#remove'+ i).click( createCallback ( i ) );
     }
 
-
+/*
   function createCallback(i){
     return function(){
-      //cart.splice(i,1,null);
+      var temLocalCart = JSON.parse(localStorage.getItem("shoppingCart"))
+      console.log(temLocalCart)
+      temLocalCart.splice(i,1);
+      localStorage.setItem("shoppingCart",JSON.stringify(temLocalCart))
       console.log(cart);
       //saveCart();
       $('#cart-item'+ i).remove();
+    }
+  }
+*/
+
+  function createCallback(i){
+    return function(){
+
+      cart.splice(i,1,'empty');
+      $('#cart-item'+ i).remove();
+      var tempCart = [];
+      for(i = 0; i< cart.length; i++){
+        if(cart[i] != 'empty'){
+          tempCart.push(cart[0])
+        }
+      }
+      //console.log(tempCart)
+      localStorage.setItem("shoppingCart",JSON.stringify(tempCart))
+      //console.log(cart);
+      //console.log(localStorage.getItem("shoppingCart"));
+
+      $('#cart-item'+ i).remove();
+      //saveCart();
+      //loadCart();
     }
   }
 
