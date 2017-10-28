@@ -14,7 +14,14 @@ $(document).ready(function(){
   listCart();
   displayCart();
 
-  console.log(cart.length);
+  var itemCount = cart.length;
+  console.log(itemCount);
+  updateCount();
+
+
+  function updateCount(){
+    $("#item-count").html(cart.length);
+  }
 
   function saveCart(){
     localStorage.setItem("shoppingCart",JSON.stringify(cart));
@@ -48,7 +55,7 @@ $(document).ready(function(){
   function displayCart(){
     var cartArray = listCart();
     var cartItem = cartArray[0];
-    var imageSrc = '';
+    var imageSrc = 'assets/product10@2x.png';
     var price = null;
     var orderPrice = 0;
     var totalPrice = 0;
@@ -57,16 +64,16 @@ $(document).ready(function(){
 
       if (cartArray[i].type == "Single Roll") {
         imageSrc = 'assets/product10@2x.png';
-        price = 4.99;
+        price = 3;
       }else if(cartArray[i].type == "6 Packs"){
         imageSrc = 'assets/product1@2x.png';
-        price = 15.99;
+        price = 16;
       }else if(cartArray[i].type == "12 Packs"){
         imageSrc = 'assets/product6@2x.png';
-        price = 19.99;
+        price = 20;
       }
 
-      orderPrice += price;
+      orderPrice = orderPrice + price * cartArray[i].value;
       totalPrice = orderPrice + 5;
 
       var replaceHtml1 = "<div class='cart-item' id = 'cart-item"+ i +"'><div class='item-image'><img src=" + imageSrc + " alt='item-image' ></div><div class='item-detail'><div class='item-detail-left'>";
@@ -214,8 +221,12 @@ $(document).ready(function(){
     cart.push(selectedItem);
     saveCart();
     console.log(cart.length);
-    location.reload();
-    itemCount++;
+    //location.reload();
+    loadCart();
+    itemCount = cart.length;
+    console.log(itemCount);
+
+    updateCount();
   });
 
   $(".dropbnt").click(function(){
@@ -229,7 +240,7 @@ $(document).ready(function(){
     $(this).addClass("type-item-active");
     $("#type-6").removeClass("type-item-active");
     $("#type-12").removeClass("type-item-active");
-    $("#price-detail-page").html("$4.99");
+    $("#price-detail-page").html("$3");
     $('#image-detail-page').attr('src','assets/product10@2x.png');
     disableFlavors();
   });
@@ -241,7 +252,7 @@ $(document).ready(function(){
     $(this).addClass("type-item-active");
     $("#type-1").removeClass("type-item-active");
     $("#type-12").removeClass("type-item-active");
-    $("#price-detail-page").html("$15.99");
+    $("#price-detail-page").html("$16");
     $('#image-detail-page').attr('src','assets/product1@2x.png');
     enableFlavors();
   });
@@ -253,7 +264,7 @@ $(document).ready(function(){
     $(this).addClass("type-item-active");
     $("#type-1").removeClass("type-item-active");
     $("#type-6").removeClass("type-item-active");
-    $("#price-detail-page").html("$19.99");
+    $("#price-detail-page").html("$20");
     $('#image-detail-page').attr('src','assets/product6@2x.png');
     enableFlavors();
   });
@@ -439,6 +450,8 @@ $(document).ready(function(){
       //console.log(localStorage.getItem("shoppingCart"));
 
       $('#cart-item'+ i).remove();
+
+      $("#item-count").html(tempCart.length);
       //saveCart();
       //loadCart();
     }
