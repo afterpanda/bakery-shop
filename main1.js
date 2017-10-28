@@ -13,15 +13,44 @@ $(document).ready(function(){
   listCart();
   displayCart();
 
+
   function saveCart(){
+
     localStorage.setItem("shoppingCart",JSON.stringify(cart));
+    console.log(localStorage.getItem("shoppingCart"));
   };
+
+/*
+
+  window.onload = addClick;
+
+  $('#remove0').click(function(){
+    console.log('asdasd')
+  });
+
+  function addClick(){
+    $('#remove0').click(function(){
+      console.log('asdasd')
+    });
+    console.log($('#remove0'))
+    for(var i = 0; i++; i < cart.length){
+      $("#remove"+i).click(function(){
+        console.log('clicked'+i)
+      })
+    }
+
+    };
+
+*/
 
   function loadCart(){
     cart = JSON.parse(localStorage.getItem("shoppingCart"));
-    if (cart == null) {
-      cart =[];
+    console.log(cart);
+    if (!cart) {
+      cart = [];
+      console.log(cart);
     }
+    console.log(cart);
   };
 
   function listCart(){
@@ -45,7 +74,7 @@ $(document).ready(function(){
   function displayCart(){
     var cartArray = listCart();
     var cartItem = cartArray[0];
-    var imageSrc = '';
+    var imageSrc = 'assets/product10@2x.png';
     var price = null;
     var orderPrice = 0;
     var totalPrice = 0;
@@ -83,8 +112,9 @@ $(document).ready(function(){
     $("#order-value").html("$" + orderPrice);
     $("#total-value").html("$" + totalPrice);
 
-  };
 
+
+  };
 
 
   function disableFlavors(){
@@ -199,7 +229,6 @@ $(document).ready(function(){
 
   $("#add-to-cart").click(function(){
     event.preventDefault();
-    //cart = [];
     //var selected = $('.flavor-item-active')
     //console.log(selected);
     //for(var i = 0; i<selected.length; i++) {
@@ -389,8 +418,6 @@ $(document).ready(function(){
     addUpTo3Flavors();
   });
 
-
-
   $(".dropdown-number").click(function(event){
     event.preventDefault();
     selectedItem.value = $(this).attr("value");
@@ -399,6 +426,15 @@ $(document).ready(function(){
     $(".dropdown-content").hide(200);
     $
   });
+
+/*
+    for (let i in cart) {
+      var removeId = "#remove" + i;
+      $(removeId).on('click',function(){
+        console.log(removeId);
+      });
+    }
+*/
 
   for(var i = 0; i < cart.length; i++){
     $('#remove'+ i).click( createCallback ( i ) );
